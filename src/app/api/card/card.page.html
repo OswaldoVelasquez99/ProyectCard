@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title> {{ card.name }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="card.imageUrl" width="100%">
+    <ion-card-header>
+      <ion-card-subtitle> {{card.setName}} </ion-card-subtitle>
+      <ion-card-title>{{card.name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p><b>Type: </b> {{card.type}} </p>
+      <p><b>Rarity: </b> {{card.rarity}} </p>
+      <p><b>Artist: </b> {{card.artist}} </p>
+      <p><b>Layout: </b> {{card.layout}} </p>
+      <p><b>Text: </b> {{card.text}} </p>
+      <p><b>ManaCost: </b> {{card.manaCost}} </p>
+      <p><b>Colors: </b> {{card.colors}} </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

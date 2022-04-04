@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  public cards : Array<any>
 
+  constructor(
+    private apiServices: ApiService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.apiServices.getCards().then(result => {
+      console.log(result)
+      this.cards = result.cards
+    })
+  }
+
+  goCard(multiverseid) {
+    this.router.navigateByUrl(`card/${multiverseid}`)
+  }
 }
